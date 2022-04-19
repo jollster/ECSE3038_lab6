@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Tanks</title>
+  </head>
+  <body>
+
+    <div class="form-container">
+      <div class="submit-form" >
+        <h3>Submit Form</h3>
+          <div>location <input id="tank_loc" type=text/></div>
+          <div>latitude <input id="tank_lat" type=text/></div>
+          <div>longitude <input id="tank_long" type=text/></div>
+          <div>percentage_full<input id="tank_perc" type=text/></div>
+          <button onclick="postFunction()">Submit</button> 
+      </div>
+    </div>
+    
+
+    <script>
+        
+        function postFunction() {
+          const located = document.getElementById("tank_loc").value;
+          const lati = document.getElementById("tank_lat").value;
+          const longi = document.getElementById("tank_long").value;
+          const perc = document.getElementById("tank_perc").value;
+        
+
+        var tankOBJ = {
+            location:located,
+            lat:lati,
+            long:longi,
+            percentage_full:perc,
+        };
+
+        var postOptions ={
+            method:"POST",
+            headers:{
+                "Content-Type":"application/json",
+            },
+            body: JSON.stringify(tankOBJ),
+        };
+        var url = "http://localhost:3000/data"
+        fetch(url,postOptions).then(() => location.reload());
+    }
+
+
+    </script>
+
+
+    <script>
+      window.onload = function () {
+        fetch("http://localhost:3000/data")
+          .then((res) => res.json())
+          .then((tanks) => {
+            console.log(tanks);
+            var body = document.querySelector("body");
+            tanks.forEach((tank) => {
+              console.log(tank._id["$oid"]);
+              var tankCard = document.createElement("tank-card");
+              tankCard.setAttribute("tank_id", tank._id["$oid"]);
+              tankCard.setAttribute("loc", tank.location);
+              tankCard.setAttribute("long", tank.long);
+              tankCard.setAttribute("lat", tank.lat);
+              tankCard.setAttribute("percentage_full", tank.percentage_full);
+              
+              
+              body.appendChild(tankCard);
+            });
+          });
+      };
+    </script>
+    <script src="Tanks/tank_script.js"></script>
+  </body>
+</html>

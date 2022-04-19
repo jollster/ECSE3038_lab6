@@ -1,0 +1,23 @@
+body {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+
+.submit-form{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: left;
+}
+
+.form-container{
+  height: 300px;
+  width: 280px;
+  background-color: rgb(255, 208, 52);
+  box-shadow: 0px 2px 3px 0px #0000007a;
+  display: flex;
+  align-self:flex-start
+  
+}

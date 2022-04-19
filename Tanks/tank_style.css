@@ -1,0 +1,75 @@
+
+
+.tank-card-container {
+
+  height: 400px;
+  width: 280px;
+  background-color: rgb(23, 230, 40);
+  border: 2px solid black;
+  /* box-shadow: 0px 2px 3px 0px #0000007a; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ 
+}
+
+.card-image {
+  height: 150px;
+  width: 150px;
+  /* border-radius: 100%; */
+  background-color: rgb(23, 230, 40);
+  /* box-shadow: -1px 4px 7px 0px #0000007a; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.card-icons {
+  height: 50px;
+  /* border: 1px solid black;  */
+  width: 90%;
+  display: flex;
+  justify-content: left;
+}
+
+.card-icons-image {
+  width: 55px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.card-stats {
+  /* border: 1px solid black; */
+  height: 240px;
+  width: 90%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.card-stats-inner {
+  height: 100%;
+  width: 30%;
+  /* border: 1px dashed black;  */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-image-image {
+  height: 100%;
+  /* overflow: hidden; */
+}
+
+.tank-card-delete {
+  height: 30px;
+}
+
+.tank-card-delete-icon {
+  height: 100%;
+  cursor: pointer;
+  /* position: relative; */
+  /* right: 10px; */
+}
