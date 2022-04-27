@@ -1,6 +1,6 @@
 # ECSE3038_lab6 Server
 
-The app provides a user with a simple form that accepts the various attributes of of a tank object. 
+The app provides a user with a simple form that accepts the various attributes of a tank object. 
 
 The form accepts the following:
 
